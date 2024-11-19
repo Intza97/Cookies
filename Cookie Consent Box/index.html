@@ -1,56 +1,49 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
+<html lang="es">
+<head>
   <!--==================== METADATOS ====================-->
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="description" content="Cookies">
-      <meta name="keywords" content="HTML-CSS-JS">
-      <meta name="author" content="Rocio Cuello">
-      
-      <!--==================== CSS ====================-->
-      <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Cookies">
+  <meta name="keywords" content="HTML-CSS-JS">
+  <meta name="author" content="Rocio Cuello">
 
-      <!--==================== TITULO ====================-->
-      <title> Cookies  | Cookie Consent Box </title>
+  <!--==================== CSS ====================-->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-      <!--==================== ICONO DE PESTAÑA ====================-->
-      <link rel="icon" sizes="64x64" href="assets/img/favicon.webp"> 
+  <!--==================== TITULO ====================-->
+  <title>Cookies | Cookie Consent Box</title>
 
-    </head>
-
-  <body>
-    <div class="wrapper">
-      <img src="assets/img/galleta.png" alt="">
-      <div class="content">
-        <header>Consentimiento de Cookies</header>
-        <p>Este sitio web utiliza cookies para asegurar que obtenga la mejor experiencia en nuestro sitio web.</p>
-        <div class="buttons">
-          <button class="item">Entiendo</button>
-          <a href="#" class="item">Saber más</a>
-        </div>
+  <!--==================== ICONO DE PESTAÑA ====================-->
+  <link rel="icon" sizes="64x64" href="assets/img/favicon.webp"> 
+</head>
+<body>
+  <div class="wrapper">
+    <img src="assets/img/galleta.png" alt="">
+    <div class="content">
+      <header>Consentimiento de Cookies</header>
+      <p>Este sitio web utiliza cookies para asegurar que obtenga la mejor experiencia en nuestro sitio web.</p>
+      <div class="buttons">
+        <button class="item">Entiendo</button>
+        <a href="#" class="item">Saber más</a>
       </div>
     </div>
-      
-       <!--==================== script ====================-->
-       <script>
-        const cookieBox = document.querySelector(".wrapper"),
-        acceptBtn = cookieBox.querySelector("button");
-        acceptBtn.onclick = ()=>{
-          //estableciendo la cookie por 1 mes, después de un mes expirará automáticamente
-          document.cookie = "CookieBy=CodingNepal; max-age="+60*60*24*30;
-          if(document.cookie){ //si la cookie está establecida
-            cookieBox.classList.add("hide"); //ocultar el cuadro de cookies
-          }else{ //si la cookie no está establecida, alertar un error
-            alert("¡La cookie no se puede establecer! Por favor desbloquea este sitio en la configuración de cookies de tu navegador.");
-          }
-        }
-        let checkCookie = document.cookie.indexOf("CookieBy=CodingNepal"); //comprobando nuestra cookie
-        //si la cookie está establecida, ocultar el cuadro de cookies, si no, mostrarlo
-        checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+  </div>
+  <!--==================== SCRIPT ====================-->
+  <script>
+    const cookieBox = document.querySelector(".wrapper"),
+    acceptBtn = cookieBox.querySelector("button");
+    acceptBtn.onclick = ()=>{
+    document.cookie = "CookieBy=CodingNepal; max-age="+60*60*24*30;
+    if(document.cookie){ 
+    cookieBox.classList.add("hide"); 
+    }else{
+    alert("¡La cookie no se puede establecer! Por favor desbloquea este sitio en la configuración de cookies de tu navegador.");
+    }
+    }
+    let checkCookie = document.cookie.indexOf("CookieBy=CodingNepal"); 
+    checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
   </script>
-  
-    </script>
-  </body>
+</body>
 </html>
